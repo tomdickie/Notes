@@ -1,0 +1,29 @@
+<p>
+  <h1><%=h @person.name %></h1>
+</p>
+
+<h2>Scrum Notes</h2>
+
+
+
+<% @person.notes.all(:conditions=> ["created_at >= ? ", Time.now.beginning_of_day]).each do |note| %>
+  <p>
+    <h3><%=h note.date %></h3>
+  </p>
+
+  <p><b>Yesterday: </b><br />
+    <%=h note.yesterday %>
+  </p>
+  <p><b>Today: </b><br />
+    <%=h note.today %>
+  </p>
+  <p><b>Issues: </b><br />
+    <%=h note.issues %>
+  </p>
+<% end %>
+
+<p>
+  <%= link_to "Edit", edit_person_path(@person) %> |
+  <%= link_to "Destroy", @person, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", people_path %>
+</p>

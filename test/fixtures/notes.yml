@@ -1,0 +1,13 @@
+one:
+  person_id: 1
+  date: 2010-07-11
+  yesterday: MyText
+  today: MyText
+  issues: MyText
+
+two:
+  person_id: 1
+  date: 2010-07-11
+  yesterday: MyText
+  today: MyText
+  issues: MyText

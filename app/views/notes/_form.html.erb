@@ -1,0 +1,24 @@
+<% form_for @note do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :person_id %><br />
+    <%= f.text_field :person_id %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.label :yesterday %><br />
+    <%= f.text_area :yesterday %>
+  </p>
+  <p>
+    <%= f.label :today %><br />
+    <%= f.text_area :today %>
+  </p>
+  <p>
+    <%= f.label :issues %><br />
+    <%= f.text_area :issues %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

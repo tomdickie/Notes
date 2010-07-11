@@ -1,0 +1,25 @@
+<% title "Notes" %>
+
+<table>
+  <tr>
+    <th>Person</th>
+    <th>Date</th>
+    <th>Yesterday</th>
+    <th>Today</th>
+    <th>Issues</th>
+  </tr>
+  <% for note in @notes %>
+    <tr>
+      <td><%=h note.person_id %></td>
+      <td><%=h note.date %></td>
+      <td><%=h note.yesterday %></td>
+      <td><%=h note.today %></td>
+      <td><%=h note.issues %></td>
+      <td><%= link_to "Show", note %></td>
+      <td><%= link_to "Edit", edit_note_path(note) %></td>
+      <td><%= link_to "Destroy", note, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Note", new_note_path %></p>

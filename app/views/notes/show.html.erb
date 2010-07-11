@@ -1,0 +1,28 @@
+<% title "Note" %>
+
+<p>
+  <strong>Person:</strong>
+  <%=h @note.person_id %>
+</p>
+<p>
+  <strong>Date:</strong>
+  <%=h @note.date %>
+</p>
+<p>
+  <strong>Yesterday:</strong>
+  <%=h @note.yesterday %>
+</p>
+<p>
+  <strong>Today:</strong>
+  <%=h @note.today %>
+</p>
+<p>
+  <strong>Issues:</strong>
+  <%=h @note.issues %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_note_path(@note) %> |
+  <%= link_to "Destroy", @note, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", notes_path %>
+</p>
