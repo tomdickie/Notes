@@ -1,14 +1,10 @@
 class NotesController < ApplicationController
   def index
-    @notes = Note.all
+    @notes = Note.all    
   end
   
   def show
     @note = Note.find(params[:id])
-  end
-
-  def find_by_date
-    @note = Note.find(:all, :conditions => {:date => ("2010-07-10")})
   end
   
   def new

@@ -4,13 +4,12 @@
 
 <h2>Scrum Notes</h2>
 
-
-
-<% @person.notes.all(:conditions=> ["created_at >= ? ", Time.now.beginning_of_day]).each do |note| %>
+<% @person.notes.recent(params[:date]).each do |note| %>
   <p>
     <h3><%=h note.date %></h3>
   </p>
-
+    <a href="/people/<%= params[:id] %>?date=<%= note.date.advance(:days => -1) %>">previous</a>
+    <a href="/people/<%= params[:id] %>?date=<%= note.date.advance(:days => 1) %>">next</a>
   <p><b>Yesterday: </b><br />
     <%=h note.yesterday %>
   </p>
